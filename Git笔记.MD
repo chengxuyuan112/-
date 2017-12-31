@@ -62,7 +62,7 @@
 
 - 从远程库clone
 
-           $ git clone git@xxxxx.git 远程库的名字
+           $ git clone git@github.com:xxx/gitskills.git远程库的名字
 
 
 
