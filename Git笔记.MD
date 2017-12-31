@@ -44,4 +44,25 @@
 
  -查看记录每一次命令的commitid
 
-    git  reflog       
+    git  reflog    
+
+ - 使用git像远程仓库github提交代码，这里注意第一次使用github的时候需要创建SSH Key来连接
+
+ 第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key
+
+        $ ssh-keygen -t rsa -C "youremail@example.com"
+
+
+ 在github创建一个空的库 
+
+         ①  $ git remote add origin git@github.com:michaelliao/learngit.git 使用这个命令与本地库关联起来
+
+         ② $ git push -u origin master  往远程库推送
+
+
+- 从远程库clone
+
+           $ git clone git@xxxxx.git 远程库的名字
+
+
+
