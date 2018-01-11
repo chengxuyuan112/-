@@ -1,0 +1,105 @@
+================================================================================
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+================================================================================
+
+$Id: STATUS.txt 1398256 2012-10-15 12:06:28Z kkolinko $
+
+                         =================================
+                         Apache Tomcat 6.0 Patch Proposals
+                         =================================
+
+
+RELEASE SHOWSTOPPERS:
+
+
+PATCHES ACCEPTED TO BACKPORT:
+  [ start all new proposals below, under PATCHES PROPOSED. ]
+
+PATCHES PROPOSED TO BACKPORT:
+  [ New proposals should be added at the end of the list ]
+
+* Backport UserDataHelper class (issue 52184)
+  Provide greater control over the logging of errors triggered by invalid
+  input data (i.e. data over which Tomcat has no control).
+
+  Note: cookies logging (o.a.t.util.http.Cookies) does not need to be
+  addressed in Tomcat 6, because all logging in that class here is done at
+  debug level.
+
+  http://people.apache.org/~kkolinko/patches/2012-03-26_tc6_UserDataHelper.patch
+  (includes a new file, copied from trunk:
+  svn cp ../../trunk/java/org/apache/tomcat/util/log/UserDataHelper.java@1242371 java/org/apache/tomcat/util/log/UserDataHelper.java
+  )
+  +1: kkolinko
+  -1:
+
+* For https://issues.apache.org/bugzilla/show_bug.cgi?id=52055
+  Ensure that filters are recycled.
+  Inspired by r1334790 (TC7), r565964 (TC6 Nio)
+  I do not have evidence that this change matters, but it should not hurt.
+  The nextRequest() method already recycles the filters. If it has been called,
+  then lastActiveFilter is -1 and the new code will be NOOP.
+  http://people.apache.org/~kkolinko/patches/2012-06-02_tc6_recycle.patch
+  +1: kkolinko, schultz
+  -1:
+
+* Fix https://issues.apache.org/bugzilla/show_bug.cgi?id=53481
+  Add support for SSLHonorCipherOrder
+  http://svn.apache.org/viewvc?view=revision&revision=1371298
+  http://svn.apache.org/viewvc?view=revision&revision=1371302 (rolls-back inadvertent addition of TOMCAT-NEXT.txt)
+  http://svn.apache.org/viewvc?view=revision&revision=1371620 (tab -> spaces)
+  +1: schultz, kkolinko, jfclere
+  -1:
+     -- Note that a bug has been found in the feature to backport which
+        requires an update to tcnative:
+        https://issues.apache.org/bugzilla/show_bug.cgi?id=53969
+
+
+PATCHES/ISSUES THAT ARE STALLED
+
+* Backport JSP unloading patch (BZ48358).
+  The patch has substantially changed since the original version.
+  Original revisions are: 937787, 1028377, 1028389, 1028396, 1028861, 1028862, 1028863,
+  1028935, 1028939, 1028940, 1028944, 1028950, 1030014, 1030037
+  Combined TC 6 patch:
+  http://people.apache.org/~rjung/patches/BZ48358-JSP_Unloading-TC6_20101118.patch
+  +1: rjung
+  -0: markt - http://markmail.org/thread/777be426ulcfmdd3 suggests there may be
+              a memory leak in this code somewhere. I'd like to get to the
+              bottom of that before porting this
+      rjung:  I started a discussion about JSPs and memory on the dev list.
+              The updated patch fixes a race condition.
+              We can stall this item until we get some feedback about 7.0.5.
+      markt - r1172614 needs to be included in this proposal. With that patch,
+              my testing shows that the unloading works as designed
+  -1:
+
+* Fix https://issues.apache.org/bugzilla/show_bug.cgi?id=52918
+  Add WebSocket support to Tomcat 6
+  +1: fhanik
+  -0: jfclere
+  -0: kkolinko:
+       - Interesting, but I do not think there is much interest in it.
+         If one needs this feature I would suggest to upgrade to Tomcat 7.
+         If one cannot upgrade to Tomcat 7 then they probably cannot
+         upgrade to a later Tomcat 6 either.
+       - The protocol specification still evolves. I think it is too risky
+         to implement websockets for Tomcat 6.
+       - Formally, the proposal does not have a link to the patch.
+       - The patch in Bugzilla does not include latest changes from Tomcat 7. E.g.
+            http://svn.apache.org/viewvc?view=revision&revision=1380841
+         (Is one supposed to just copy the current version of websocket
+         package from Tomcat 7 here?)
