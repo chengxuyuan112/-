@@ -1,0 +1,526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>readme</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h2>课程回顾：事物和连接池</h2>
+<p><strong>事物</strong></p>
+<pre><code>1.啥是事物：作用要么全都成功，要么失败。
+2.事物的4大特性：
+    * 原子性   
+    * 一致性   
+    * 隔离性   
+    * 持久性   
+
+3.在MySQL中使用事物
+    * start transaction;
+        * sql
+    * commit  或者 rollback
+
+    * set autocommit = 0或者off
+
+4.JDBC中代码实现
+    * conn.setAutoCommit(false);
+    * conn.comiit();
+    * conn.rollback();
+
+5.不考虑隔离性，引发的问题
+    * 脏读        
+    * 不可重复读 
+    * 虚读        
+
+6.避免问题发生（设置隔离级别）
+    * 未提交读
+    * 提交读
+    * 可重复读
+    * 串行
+</code></pre>
+
+<p><strong>数据库的连接池</strong></p>
+<pre><code>1.连接池概述
+2.装饰者模式（增强某个类中的方法）
+    * 增强的类和被增强的类必须实现相同的接口
+    * 增强的类可以获取被增强类的引用
+
+3.DBCP连接池
+    * 手动设置4大参数
+    * 提供配置文件（db.properties）
+
+4.C3P0连接池
+    * 手动设置4大参数
+    * 在src目录创建c3p0-config.xml
+
+5.Tomcat连接池
+    * 在&lt;Context&gt;配置 -- 启动Tomcat，主页找
+    * 需要把MySQL驱动包放到Tomcat/lib目录
+    * 只能在Servlet/JSP代码
+</code></pre>
+
+<p><strong>事物加在哪一层</strong></p>
+<pre><code>1.事物需要加在service层
+</code></pre>
+
+<h2>元数据、DBUtils和编写案例</h2>
+<p><strong>ThreadLocal事物的操作</strong></p>
+<pre><code>1.目的：传递conn对象
+    * 可以通过参数的方式传递
+    * 通过ThreadLocal类把conn绑定到ThreadLocal中。
+</code></pre>
+
+<p><strong>元数据</strong></p>
+<pre><code>1.SUN提供的一些规范，接口。
+2.元数据：可以获取数据库的基本的信息，表，字段的信息，参数的信息。
+3.作用：编写一些框架。
+4.元数据的分类
+    * 数据库元数据
+    * 参数元数据
+    * 结果集元数据    
+</code></pre>
+
+<p><strong>数据库元数据</strong></p>
+<pre><code>1.DataBaseMetaData  -- 数据库元数据
+2.谁创建数据库元数据？
+    * 由Connection对象创建的
+
+3.数据库元数据获取的内容？
+    * 获取url
+    * 获取username
+    * 获取驱动的名称
+    * 获取主键
+</code></pre>
+
+<p><strong>参数元数据（ParameterMetaData）</strong></p>
+<pre><code>1.作用：获取SQL语句中?的个数和类型（类型获取的不准确）
+2.PreparedStatement可以获取参数元数据
+3.方法
+    * getParameterCount()   -- 获取参数的个数（获取?的个数）
+</code></pre>
+
+<p><strong>结果集元数据（ResultSetMetaData）</strong></p>
+<pre><code>1.作用：获取结果集中的列的信息
+2.由ResultSet创建
+3.方法
+    * getColumnCount() 返回resultset对象的列数
+    * getColumnName(int column) 获得指定列的名称
+    * getColumnTypeName(int column)获得指定列的类型 
+</code></pre>
+
+<p><strong>抽取通用的方法</strong></p>
+<pre><code>1.编写。
+</code></pre>
+
+<p><strong>DBUtils工具类（框架）</strong></p>
+<pre><code>1.commons-dbutils 是 Apache 组织提供的一个开源 JDBC工具类库，它是对JDBC的简单封装，学习成本极低，并且使用dbutils能极大简化jdbc编码的工作量，同时也不会影响程序的性能。因此dbutils成为很多不喜欢hibernate的公司的首选。
+
+2.导入jar包。commons-dbutils-1.4.jar
+
+3.核心的类  QueryRunner类 -- 做增删改查的操作
+    * 方法
+        * QueryRunner()
+        * QueryRunner(DataSource ds) 
+
+        * int update(String sql, Object... params) 
+        * int update(Connection conn, String sql, Object... params) 
+
+        *  &lt;T&gt; T query(String sql, ResultSetHandler&lt;T&gt; rsh, Object... params) 
+        *  &lt;T&gt; T query(Connection conn, String sql, ResultSetHandler&lt;T&gt; rsh, Object... params) 
+
+    * 组合
+        * 没有事物
+        * QueryRunner(DataSource ds)     -- 传入连接池（获取连接）
+        * int update(String sql, Object... params) 
+        * &lt;T&gt; T query(String sql, ResultSetHandler&lt;T&gt; rsh, Object... params) 
+
+
+        * 和事物相关的（conn向下传递）
+        * QueryRunner()
+        * int update(Connection conn, String sql, Object... params) 
+        * &lt;T&gt; T query(Connection conn, String sql, ResultSetHandler&lt;T&gt; rsh, Object... params) 
+
+4.ResultSetHandler接口，可以用户自己来实现，重写方法。9个实现类。
+5.DbUtils类
+    * 和事物相关的方法
+    *  static void  rollbackAndClose(Connection conn) 
+    *  static void  rollback(Connection conn) 
+    *  static void  commitAndClose(Connection conn)     
+</code></pre>
+
+<p><strong>QueryRunner类</strong>	</p>
+<pre><code>1.update(String sql,Object... obj)
+2.query(String sql ,ResultSetHandler reh,Object... ojb)
+</code></pre>
+
+<p><strong>ResultsetHandler的实现类</strong></p>
+<pre><code>1.BeanHandler           -- 把一条记录封装到JavaBean对象中
+    id  username  money
+    2   美美          10000   Account(2,&quot;美美&quot;,10000)
+2.BeanListHandler           -- 把一条记录封装到JavaBean对象中，把多个JavaBean放入List集合中。
+    Account(2,&quot;美美&quot;,10000)
+    Account(3,&quot;小凤&quot;,10000)
+    最终把这些JavaBean存放到List集合中
+
+
+3.ArrayHandler              -- 把一条记录封装到数组中
+    2   美美          10000   [2,'美美',10000]
+4.ArrayListHandler,         -- 把一条记录封装到数组中，把数组存放在集合中
+    [2,'美美',10000]
+    [3,'小凤',10000]
+
+5.MapHandler                -- 一条记录封装到Map集合
+    {id=2 username=美美 money=10000}
+6.MapListHandler            -- 一条记录封装到Map集合，把Map集合存放到集合中
+    {id=2 username=小凤 money=10000}
+
+
+7.ScalarHandler         -- 封装count(*) 单行单列数据
+
+8.ColumnListHandler     -- 查询是一列数据，把一列数据封装到集合中。
+
+9.KeyedHandler          -- 把一条记录封装到一个map集合，把该map集合又存放在另一个map集合中。
+
+
+* 重点    BeanHandler     BeanListHandler ScalarHandler
+</code></pre>
+
+<p><strong>客户管理案例</strong></p>
+<pre><code>1.目的：总结JDBC，和Servlet JSP结合到一起。
+2.开发中的一些小技巧。
+
+3.客户管理平台功能
+    * 添加客户
+    * 查询所有的客户的信息
+    * 修改客户信息
+    * 删除客户信息
+    * 按条件查询
+    * 分页查询数据
+
+4.准备环境
+5.Servlet + JSP +JavaBean + JDBC 
+6.数据库
+    create database day19;
+    use day19;
+    create table t_customer(
+        id varchar(40) primary key,
+        username varchar(20),
+        gender varchar(10),
+        birthday varchar(20),
+        cellphone varchar(20),
+        email varchar(40),
+        love varchar(100),
+        type varchar(40)
+    );      
+
+7.导入jar包。
+    * MySLQ驱动包
+    * BeanUtils包
+    * JSTL标签库
+    * DBUtils
+    * c3p0
+
+8.创建包结构
+    * cn.itcast.action
+    * cn.itcast.service
+    * cn.itcast.dao
+    * cn.itcast.vo
+    * cn.itcast.utils
+
+9.把工具类和配置文件复制过来
+</code></pre>
+
+<p><strong>添加客户的功能</strong></p>
+<pre><code>1.form表单 -- 校验
+2.字段的名称和javaBean的属性和表单中name属性的值都是相同的。
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
